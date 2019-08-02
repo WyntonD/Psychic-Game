@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <div id="buttons"></div>
+    <div class="container">
+        <div class="jumbotrom">
+            <h1 class="text-center">
+                <bold> Guess That Team!</bold>
+            </h1>
+          <hr>
+          <div id="musicControls" class="text-center">
+              <button class="pause"> 
+                 <span class="pause-button">Pause button</span> 
+              </button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image">
+                        <img src="https://i1.wp.com/img.gawkerassets.com/img/18equ9kf1w96wjpg/original.jpg?resize=518%2C292" alt="MJ">
+                </div>
+            
+                <!-- insert images here -->
+            </div>
+
+            <div class="col-md-6">
+            <h3>PRESS ANY KEY TO GET STARTED!</h3>
+                    <br/>
+            <h3 class="wins">
+                WINS: 
+            </h3>
+                    <br/>
+            <h3> CURRENT WORD:</h3>
+                    <br/>
+            <h3 class="text-box">
+                _ _ _ _ _ _ _
+            </h3>
+            <br/>
+            <h3>NUMBER OF GUESSES REMAINING: </h3>
+            <br/>
+            <h3>LETTERS ALREADY GUESSED</h3>
+            </div>
+             
+        </div>
+
+
+
+     </div>  
+
+    <script type="text/javascript">
+
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+
+    for (var i = 0; i<letters.length; i++) {
+
+
+    }
+
+    var userText = document.getElementById("user-text");
+        document.onkeyup = function(event) {
+        userText.textContent = event.key;
+
+
+
+};
+
+
+    </script>
+</body>
+</html>

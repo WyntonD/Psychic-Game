@@ -14,13 +14,22 @@
 <body>
     <div id="buttons"></div>
     <div class="container">
+
+        <div class="right-guess">
+
+        </div>
+
+        <div class="wrong-guess">
+
+
+        </div>
         <div class="jumbotrom">
             <h1 class="text-center">
                 <bold> Guess That Team!</bold>
             </h1>
           <hr>
           <div id="musicControls" class="text-center">
-              <button class="pause"> 
+              <button class="pause" id="clear"> 
                  <span class="pause-button">Pause button</span> 
               </button>
         </div>
@@ -34,11 +43,11 @@
                 <!-- insert images here -->
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6" id="directions-text">
             <h3>PRESS ANY KEY TO GET STARTED!</h3>
                     <br/>
-            <h3 class="wins">
-                WINS: 
+            <h3 id="wins-text">
+                WINS:
             </h3>
                     <br/>
             <h3> CURRENT WORD:</h3>
@@ -59,21 +68,61 @@
      </div>  
 
     <script type="text/javascript">
+// Reference for html location//
+    var directionsText = document.getElementById("directions-text");    
+// Reference for wins placment location
+    var wins = 0;
+    var winsText = document.getElementById("wins-text");
 
-    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
-
-    for (var i = 0; i<letters.length; i++) {
-
-
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"];
+    var word = ["Bulls", "Lakers", "Cowboys", "Warriors", "Panthers", "Rockets", "Eagles"];
+    var randNum = Math.floor(Math.random() * word.length);
+    let chosenWord = word[randNum];
+    
+    console.log(chosenWord);
+    
+    var underScore = []; 
+    
+    var makeScore = () => {
+        for (var i = 0; i < chosenWord.length; i++) {
+            underScore.push("_");
+        }   
+        return underScore;
     }
 
-    var userText = document.getElementById("user-text");
-        document.onkeyup = function(event) {
-        userText.textContent = event.key;
+console.log(makeScore());
+
+    for (var i = 0; i < letters.length; i++) {
+
+
+    var letterBtn = $("<button>");
+    letterBtn.addClass("letter-button letter letter-button-color");
+
+    letterBtn.attr("data-letter", letters[i]);
+
+    letterBtn.text(letters[i]);
+
+    $("#buttons").append(letterBtn);
+    
+    }
+
+$("#clear").on("click", function()  {
+    $("#display").empty();
+
+});
+
+document.onkeyup = function(event) {
+    var userGuess = event.key;
 
 
 
-};
+}
+
+
+
+
+
+
 
 
     </script>

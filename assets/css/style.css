@@ -7,6 +7,7 @@
 .container {
     background-color:indianred;
     height:100%;
+    text-align: center;
 }
 
 #kobe {
@@ -15,6 +16,6 @@
     display:none;
 }
 
-#steph{
+#steph {
     display:none;
 }

@@ -4,85 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    <div id="display"></div>
-    <div id="buttons"></div>
-    <div class="container">
+        <!DOCTYPE html>
 
-        <div class="right-guess">
-
-        </div>
-
-        <div class="wrong-guess">
-
-
-        </div>
-        <div class="jumbotrom">
-            <h1 class="text-center">
-                <bold> Guess That Team!</bold>
-            </h1>
-          <hr>
-          <div id="musicControls" class="text-center">
-              <button class="pause" id="clear" value="clear"> 
-                 <span class="clear-button">Clear button</span> 
-              </button>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="images">
-                    <span id="mj">
-                        <img src="https://i1.wp.com/img.gawkerassets.com/img/18equ9kf1w96wjpg/original.jpg?resize=518%2C292" alt="mj" width =100%>
-                    </span>
+        <html lang="en-us">
+        
+          <head>
+        
+            <meta charset='UTF-8'>
+            <title> Word Guess Game!</title>
+        
+            <!-- Bootstrap CDN -->
+            <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        
+          </head>
+          <body>
+        
+            <!-- Bootstrap Container will hold everything. -->
+            <div class="container">
+        
+              <!-- Jumbotron holds the title section. -->
+              <div class='jumbotron'>
+                <div class='container'>
+                  <h1> Animal Word Guessing Game</h1>
+                  <h2>Guess the name of any animal</h2>
+                  <small>Click any letter to begin...</small>
                 </div>
-                <div class="images">
-                    <span id="kobe">
-                        <img src="https://newtheory.com/wp-content/uploads/2016/04/cd0ymzcznguwzdbhnduynddiytjhm2yyzthlmtjjotqwyyznpwu2y2e5zdq2ztvmy2y5odi1mde1ntm2njvmnme1zwnl.jpeg" alt="kobe" width=100%>
-                    </span>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- First card: Holds the Word to Guess (blanks and guessed word). -->
+                  <div class="card card-default">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>Word to Guess</strong></h3>
+                    </div>
+        
+                    <div class="card-body">
+                      <!-- This h3 section called word-blanks is what we"ll be replacing with letters as the user guesses. Pay particular attention to the id called ***word-blanks***. We"ll be referencing this in the JavaScript. -->
+                      <h3 id="word-blanks">_ _ _ _ _ _ _ _ _ </h3>
+                    </div>
+                  </div>
+        
+                  <!-- Second card: Holds the list of Wrong User Guesses. -->
+                  <div class="card card-default">
+                    <div class="card-body">
+        
+                      <!-- This span section called wrong-guesses is where we will be dumping the wrong guesses. Pay particular attention to the id called ****wrong-guesses***. We"ll be referencing this in the JavaScript. -->
+                      <strong>Wrong Guesses: </strong> <span id="wrong-guesses"></span>
+        
+                    </div>
+                  </div>
+        
+                  <!-- Third card: Holds the Number of Wrong Guesses. -->
+                  <div class="card card-default">
+                    <div class="card-body">
+        
+                      <!-- This span is where we"ll dump the number of guesses left. Pay attention to the id called ****guesses-left**** we"ll be referencing this in the JavaScript. -->
+                      <strong>Guesses Left: </strong> <span id="guesses-left">9</span>
+        
+                    </div>
+        
+                  </div>
+        
+                  <!-- Fourth card: Holds the number of Wins. -->
+                  <div class="card card-default">
+        
+                    <div class="card-body">
+        
+                      <!-- This span called win-counter is where we"ll be dumping the number of wins. Pay attention to the id called ****win-counter*** we"ll be referencing this in the JavaScript. -->
+                      <strong>Wins: </strong> <span id="win-counter">0</span>
+        
+                    </div>
+        
+                  </div>
+        
+                  <!-- Fifth card: Holds the number of Losses. -->
+                  <div class="card card-default">
+                    <div class="card-body">
+        
+                      <!-- This span called loss-counter is where we"ll be dumping the number of losses. Pay attention to the id called ****loss-counter***; we"ll be referencing this in the JavaScript. -->
+                      <strong>Losses: </strong> <span id="loss-counter">0</span>
+
+                    </div>
+        
+                  </div>
+        
                 </div>
-                 <div class="images">
-                    <span id="steph">
-                        <img src="https://cdn.vox-cdn.com/thumbor/xqFDx4EqonlVRsKQo7egI37VfjQ=/0x0:3000x2349/1200x800/filters:focal(1049x456:1529x936)/cdn.vox-cdn.com/uploads/chorus_image/image/59423883/924718000.jpg.0.jpg" alt="steph" width=100%>
-                    </span>
-                </div>
-            
-                <!-- insert images here -->
+        
+              </div>
+        
             </div>
-
-            <div class="col-md-6" id="directions-text">
-            <h3>PRESS ANY KEY TO GET STARTED!</h3>
-                    <br/>
-            <h3 id="wins-text">
-                WINS:
-            </h3>
-                    <br/>
-            <h3> CURRENT WORD:</h3>
-                    <br/>
-            <h3 class="text-box" id="under-score">
-                _ _ _ _ _ _ _
-            </h3>
-            <br/>
-            <h3><span id="rem-guesses">NUMBER OF GUESSES REMAINING: 
-                <span>
-            </h3>
-            <br/>
-            <h3><span id="let-guessed">LETTERS ALREADY GUESSED
-                <span>
-            </h3>
-            </div>
-             
-        </div>
-
-
-
-     </div>  
-     <script src="assets/javascript/game1.js"></script>
-    </body>
+        
+            <!-- Adds a link to the JavaScript file. Loaded at the bottom so it waits for the HTML content to display first. If you put this at the top it will crash, because the HTML IDs won"t exist yet.-->
+            <script src="../UNCCCLT201907FSF2/05-timers/01-Activities/01-WordGuess/logic.js"></script>
+        
+          </body>
+        
+        </html>
+</script>
+</body>
 </html>
